@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffe6ee">
+  <title>A Little Surprise for You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- ============ 1. LOGIN ============ -->
+  <main id="login" class="screen">
+    <form id="loginForm" class="card login-card" novalidate autocomplete="off">
+      <div class="login-icon" aria-hidden="true">💌</div>
+      <h1>A Little Surprise for You ❤️</h1>
+
+      <label for="name">Who are you?</label>
+      <input id="name" type="text" placeholder="Enter your name" autocomplete="off" maxlength="30">
+
+      <label for="password">Password</label>
+      <div class="pw">
+        <input id="password" type="password" placeholder="Hint: your birthday, DD/MM/YYYY" autocomplete="off">
+        <button type="button" class="toggle" id="togglePw" aria-label="Show password">Show</button>
+      </div>
+
+      <p id="error" role="alert"></p>
+      <button type="submit" class="btn">Unlock Your Surprise</button>
+    </form>
+  </main>
+
+  <!-- ============ 2. HOME ============ -->
+  <main id="home" class="screen" hidden>
+    <div class="wrap">
+
+      <section class="hero">
+        <div class="balloons" aria-hidden="true">
+          <i class="balloon" style="--c:#f7a8bf;--l:4%;--w:56px;--d:6s"></i>
+          <i class="balloon" style="--c:#ffd9a8;--l:21%;--w:46px;--d:7s;--dl:-1.5s;--t:34px"></i>
+          <i class="balloon" style="--c:#e2678b;--l:44%;--w:60px;--d:5.5s;--dl:-.8s;--t:6px"></i>
+          <i class="balloon" style="--c:#ffd0de;--l:68%;--w:48px;--d:6.5s;--dl:-2.4s;--t:36px"></i>
+          <i class="balloon" style="--c:#f48fb1;--l:84%;--w:54px;--d:7.2s;--dl:-3s"></i>
+        </div>
+
+        <h1 id="title">Happy Birthday! 🎂</h1>
+        <p class="sub">Today is all about you.</p>
+
+        <button class="cake-btn" id="cakeBtn" aria-label="Celebrate with confetti">
+          <svg viewBox="0 0 240 220" class="cake" role="img" aria-label="Birthday cake with three candles">
+            <defs>
+              <path id="heart" d="M0 4 C-9 -3 -5 -10 0 -5 C5 -10 9 -3 0 4Z"/>
+            </defs>
+            <ellipse cx="120" cy="203" rx="108" ry="13" fill="#f3cfda"/>
+            <ellipse cx="120" cy="199" rx="108" ry="13" fill="#fde9ef"/>
+            <!-- bottom tier -->
+            <rect x="28" y="134" width="184" height="64" rx="16" fill="#fbc9d8"/>
+            <path d="M28 148 Q28 134 44 134 H196 Q212 134 212 148 V150 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0 q-11.5 14 -23 0Z" fill="#fff"/>
+            <use href="#heart" transform="translate(66 178) scale(1.3)" fill="#e2678b"/>
+            <use href="#heart" transform="translate(120 182) scale(1.3)" fill="#e2678b"/>
+            <use href="#heart" transform="translate(174 178) scale(1.3)" fill="#e2678b"/>
+            <!-- top tier -->
+            <rect x="58" y="88" width="124" height="52" rx="14" fill="#fff6ea"/>
+            <path d="M58 102 Q58 88 72 88 H168 Q182 88 182 102 V104 q-15.5 14 -31 0 q-15.5 14 -31 0 q-15.5 14 -31 0 q-15.5 14 -31 0Z" fill="#f7a8bf"/>
+            <circle cx="88" cy="124" r="3.5" fill="#f7a8bf"/>
+            <circle cx="120" cy="128" r="3.5" fill="#f7a8bf"/>
+            <circle cx="152" cy="124" r="3.5" fill="#f7a8bf"/>
+            <!-- candles -->
+            <g>
+              <rect x="88" y="58" width="8" height="32" rx="3" fill="#ffe3ec"/>
+              <rect x="88" y="66" width="8" height="4" fill="#f48fb1"/><rect x="88" y="76" width="8" height="4" fill="#f48fb1"/>
+              <rect x="116" y="54" width="8" height="36" rx="3" fill="#ffe3ec"/>
+              <rect x="116" y="62" width="8" height="4" fill="#f48fb1"/><rect x="116" y="72" width="8" height="4" fill="#f48fb1"/>
+              <rect x="144" y="58" width="8" height="32" rx="3" fill="#ffe3ec"/>
+              <rect x="144" y="66" width="8" height="4" fill="#f48fb1"/><rect x="144" y="76" width="8" height="4" fill="#f48fb1"/>
+            </g>
+            <!-- flames -->
+            <g transform="translate(92 57)"><g class="flame"><path d="M0 -15 C7 -7 7 0 0 3 C-7 0 -7 -7 0 -15Z" fill="#ffc34d"/><ellipse cx="0" cy="-2" rx="2.6" ry="4.5" fill="#fff2c4"/></g></g>
+            <g transform="translate(120 53)"><g class="flame" style="animation-delay:-.4s"><path d="M0 -15 C7 -7 7 0 0 3 C-7 0 -7 -7 0 -15Z" fill="#ffc34d"/><ellipse cx="0" cy="-2" rx="2.6" ry="4.5" fill="#fff2c4"/></g></g>
+            <g transform="translate(148 57)"><g class="flame" style="animation-delay:-.8s"><path d="M0 -15 C7 -7 7 0 0 3 C-7 0 -7 -7 0 -15Z" fill="#ffc34d"/><ellipse cx="0" cy="-2" rx="2.6" ry="4.5" fill="#fff2c4"/></g></g>
+          </svg>
+        </button>
+        <p class="tap-hint">Tap the cake</p>
+      </section>
+
+      <section class="section">
+        <div class="card wish">
+          <p id="wish"></p>
+        </div>
+      </section>
+
+      <section class="section center">
+        <h2 class="section-title">I wrote something for you</h2>
+        <button class="btn inline" id="letterBtn" aria-expanded="false" aria-controls="letterBox">Open my letter 💌</button>
+        <div class="reveal" id="letterBox">
+          <div class="inner">
+            <article class="letter" id="letter"></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section center">
+        <h2 class="section-title">And one more thing…</h2>
+        <button class="gift" id="gift" aria-label="Open your gift">
+          <span class="spark" aria-hidden="true">✨</span>
+          <span class="box"></span>
+          <span class="lid"><span class="bow"></span></span>
+        </button>
+        <p class="tap-hint" id="giftHint">Tap the gift to open it</p>
+        <div class="reveal" id="surprise">
+          <div class="inner">
+            <div class="card surprise-card">
+              <h3 id="surpriseTitle"></h3>
+              <img id="surprisePhoto" alt="" hidden>
+              <p id="surpriseText"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="foot">Made with love by <span id="from"></span> ❤️</footer>
+    </div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
